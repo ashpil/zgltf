@@ -278,7 +278,7 @@ pub fn getGlobalTransform(data: *const Data, node: Node) Mat4 {
     var node_transform: Mat4 = getLocalTransform(node);
 
     while (parent_index != null) {
-        const parent = data.nodes.items[parent_index.?];
+        const parent = data.nodes[parent_index.?];
         const parent_transform = getLocalTransform(parent);
 
         node_transform = helpers.mul(parent_transform, node_transform);
